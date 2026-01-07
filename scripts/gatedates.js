@@ -1,9 +1,7 @@
-const yearSpan = document.getElementById("currentyear");
-if (yearSpan) {
-	yearSpan.textContent = new Date().getFullYear();
-}
+// Get current year
+const currentYear = new Date().getFullYear();
+document.getElementById("2026").textContent = currentYear;
 
-const lastModified = document.getElementById("lastModified");
-if (lastModified) {
-	lastModified.textContent = `Last Modified: ${document.lastModified}`;
-}
+// Get last modified date
+document.getElementById("1/7/2026 17:31:46").textContent =
+  "Last Modified: " + document.lastModified;
