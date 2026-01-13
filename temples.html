@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Temple Album</title>
+
+  <meta name="description" content="A responsive temple picture album showcasing LDS temples from around the world using HTML, CSS Grid, Flexbox, and JavaScript.">
+  <meta name="author" content="Lillian Kennedy">
 
   <!-- Google Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 
-  <!-- Mobile First CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="styles/temples.css">
   <link rel="stylesheet" href="styles/temples-large.css">
 
+  <!-- JavaScript -->
   <script src="scripts/temples.js" defer></script>
 </head>
+
 <body>
 
 <header>
@@ -40,49 +46,56 @@
   <h1>Temple Picture Album</h1>
 
   <section class="gallery">
-    <!-- 9 Figures -->
     <figure>
-      <img src="images/salt-lake-temple.webp" alt="Temple 1" loading="lazy">
+      <img src="images/salt-lake-temple.webp" alt="Salt Lake Temple" loading="lazy">
       <figcaption>Salt Lake Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/rome-italy-temple.webp" alt="Temple 2" loading="lazy">
+      <img src="images/rome-italy-temple.webp" alt="Rome Italy Temple" loading="lazy">
       <figcaption>Rome Italy Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/paris-france-temple.webp" alt="Temple 3" loading="lazy">
+      <img src="images/paris-france-temple.webp" alt="Paris France Temple" loading="lazy">
       <figcaption>Paris France Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/tokyo-japan-temple.webp" alt="Temple 4" loading="lazy">
+      <img src="images/tokyo-japan-temple.webp" alt="Tokyo Japan Temple" loading="lazy">
       <figcaption>Tokyo Japan Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/san-diego-temple.webp" alt="Temple 5" loading="lazy">
+      <img src="images/san-diego-temple.webp" alt="San Diego Temple" loading="lazy">
       <figcaption>San Diego Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/london-england-temple.webp" alt="Temple 6" loading="lazy">
+      <img src="images/london-england-temple.webp" alt="London England Temple" loading="lazy">
       <figcaption>London England Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/laie-hawaii-temple.webp" alt="Temple 7" loading="lazy">
+      <img src="images/laie-hawaii-temple.webp" alt="Laie Hawaii Temple" loading="lazy">
       <figcaption>Laie Hawaii Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/south-carolina-temple.webp" alt="Temple 8" loading="lazy">
-      <figcaption>South carolina Temple</figcaption>
+      <img src="images/south-carolina-temple.webp" alt="South Carolina Temple" loading="lazy">
+      <figcaption>South Carolina Temple</figcaption>
     </figure>
+
     <figure>
-      <img src="images/seattle-washington-temple.webp" alt="Temple 9" loading="lazy">
+      <img src="images/seattle-washington-temple.webp" alt="Seattle Washington Temple" loading="lazy">
       <figcaption>Seattle Washington Temple</figcaption>
     </figure>
   </section>
 </main>
 
 <footer>
-  <p>&copy; <span id="2026"></span> Lillian Kennedy</p>
-  <p>19:48:21 <span id="lastModified"></span></p>
+  <p>&copy; <span id="year"></span> Lillian Kennedy</p>
+  <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
 
 </body>
