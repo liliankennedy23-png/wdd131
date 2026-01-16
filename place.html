@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Alaska</title>
+
+  <meta name="description" content="A responsive page highlighting Alaska, including weather, attractions, and facts.">
+  <meta name="author" content="Lillian Kennedy">
+
+  <link rel="stylesheet" href="styles/place.css">
+  <link rel="stylesheet" href="styles/place-large.css">
+
+  <script src="scripts/place.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1>Alaska</h1>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <picture>
+    <source srcset="images/hero-small.webp" media="(max-width: 600px)">
+    <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
+    <img src="images/hero-large.webp" alt="Scenic view of Alaska mountains and wilderness">
+  </picture>
+</section>
+
+<main>
+
+  <!-- INFO -->
+  <section class="info">
+    <h2>About Alaska</h2>
+    <p>
+      Alaska is the largest U.S. state, known for its rugged wilderness, glaciers,
+      wildlife, and breathtaking landscapes.
+    </p>
+  </section>
+
+  <!-- WEATHER -->
+  <section class="weather">
+    <h2>Weather</h2>
+
+    <!-- Mobile SVG icon -->
+    <img class="weather-icon" src="images/weather.svg" alt="Partly cloudy weather">
+
+    <ul>
+      <li>Temperature: <span id="temp">20</span>°F</li>
+      <li>Wind Speed: <span id="wind">10</span> mph</li>
+      <li>Wind Chill: <span id="windchill"></span></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Lillian Kennedy</p>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+</body>
+</html>

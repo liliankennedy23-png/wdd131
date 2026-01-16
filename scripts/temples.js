@@ -2,8 +2,12 @@ const menuButton = document.getElementById("menu-button");
 const navMenu = document.getElementById("nav-menu");
 
 menuButton.addEventListener("click", () => {
-  navMenu.classList.toggle("show");
-  menuButton.textContent = navMenu.classList.contains("show") ? "✖" : "☰";
+  const isOpen = navMenu.classList.toggle("show");
+
+  menuButton.textContent = isOpen ? "✖" : "☰";
+
+  // FIX 3: Accessibility state update
+  menuButton.setAttribute("aria-expanded", isOpen);
 });
 
 // Footer dates
