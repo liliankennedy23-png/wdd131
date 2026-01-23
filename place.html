@@ -35,12 +35,10 @@
   <section class="info">
     <h2>About Alaska</h2>
     <p>
-      <p>
-  Alaska is the largest U.S. state and is renowned for its vast wilderness, dramatic mountain ranges, massive glaciers, and abundant wildlife. 
-  From towering peaks like Denali to expansive forests and icy coastlines, Alaska offers some of the most breathtaking natural landscapes in the world. 
-  The state is home to diverse ecosystems, including tundra, boreal forests, and marine environments, supporting animals such as moose, bears, whales, and bald eagles. 
-  Known for its long summer days and stunning northern lights in winter, Alaska provides unforgettable experiences for visitors and residents alike.
-</p>
+      Alaska is the largest U.S. state and is renowned for its vast wilderness, dramatic mountain ranges, massive glaciers, and abundant wildlife. 
+      From towering peaks like Denali to expansive forests and icy coastlines, Alaska offers some of the most breathtaking natural landscapes in the world. 
+      The state is home to diverse ecosystems, including tundra, boreal forests, and marine environments, supporting animals such as moose, bears, whales, and bald eagles. 
+      Known for its long summer days and stunning northern lights in winter, Alaska provides unforgettable experiences for visitors and residents alike.
     </p>
   </section>
 
@@ -64,6 +62,28 @@
   <p>&copy; <span id="year"></span> Lillian Kennedy</p>
   <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
+
+<script>
+  // Set current year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Set last modified
+  document.getElementById('lastModified').textContent = document.lastModified;
+
+  // Calculate wind chill if temp and wind are present
+  const temp = parseFloat(document.getElementById('temp').textContent);
+  const wind = parseFloat(document.getElementById('wind').textContent);
+
+  function calculateWindChill(t, v) {
+    if (t <= 50 && v > 3) {
+      return Math.round(35.74 + 0.6215*t - 35.75*Math.pow(v,0.16) + 0.4275*t*Math.pow(v,0.16)) + "°F";
+    } else {
+      return "N/A";
+    }
+  }
+
+  document.getElementById('windchill').textContent = calculateWindChill(temp, wind);
+</script>
 
 </body>
 </html>
