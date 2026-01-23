@@ -12,6 +12,20 @@
   <link rel="stylesheet" href="styles/place-large.css">
 
   <script src="scripts/place.js" defer></script>
+
+  <style>
+    /* Visually hidden class for accessibility */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+  </style>
 </head>
 
 <body>
@@ -22,6 +36,8 @@
 
 <!-- HERO -->
 <section class="hero">
+  <!-- Visually hidden heading for accessibility -->
+  <h2 class="visually-hidden">Scenic Views of Alaska</h2>
   <picture>
     <source srcset="images/hero-small.webp" media="(max-width: 600px)">
     <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
@@ -45,10 +61,8 @@
   <!-- WEATHER -->
   <section class="weather">
     <h2>Weather</h2>
-
     <!-- Mobile SVG icon -->
     <img class="weather-icon" src="images/weather.svg" alt="Partly cloudy weather">
-
     <ul>
       <li>Temperature: <span id="temp">30</span>°F</li>
       <li>Wind Speed: <span id="wind">10</span> mph</li>
