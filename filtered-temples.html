@@ -1,45 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temple Picture Album</title>
-    <link rel="stylesheet" href="filtered-temples.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Picture Album</title>
+
+  <!-- Meta tags -->
+  <meta name="description" content="A dynamic picture album of temples including name, location, dedication date, area, and images.">
+  <meta name="author" content="Lillian Kennedy">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/filtered-temples.css">
+
+  <!-- JavaScript -->
+  <script src="scripts/filtered-temples.js" defer></script>
 </head>
+
 <body>
-    <header>
-        <h1>Temple Picture Album</h1>
-        <nav>
-            <ul>
-                <li><button data-filter="all">Home</button></li>
-                <li><button data-filter="old">Old</button></li>
-                <li><button data-filter="new">New</button></li>
-                <li><button data-filter="large">Large</button></li>
-                <li><button data-filter="small">Small</button></li>
-            </ul>
-        </nav>
-        <div class="controls">
-            <input type="text" id="searchBar" placeholder="Search temple name...">
-            <select id="sortSelect">
-                <option value="none">Sort By</option>
-                <option value="year-asc">Year ↑</option>
-                <option value="year-desc">Year ↓</option>
-                <option value="area-asc">Area ↑</option>
-                <option value="area-desc">Area ↓</option>
-            </select>
-        </div>
-    </header>
 
-    <main>
-        <section id="temples-container" class="temples-grid">
-            <!-- Temple cards will be dynamically injected here -->
-        </section>
-    </main>
+<header>
+  <nav>
+    <ul>
+      <li><a href="#" data-filter="all">Home</a></li>
+      <li><a href="#" data-filter="old">Old</a></li>
+      <li><a href="#" data-filter="new">New</a></li>
+      <li><a href="#" data-filter="large">Large</a></li>
+      <li><a href="#" data-filter="small">Small</a></li>
+    </ul>
+  </nav>
+</header>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Temple Album | Last Modified: <span id="lastModified"></span></p>
-    </footer>
+<main>
+  <h1>Temple Album</h1>
 
-    <script src="filtered-temples.js"></script>
+  <!-- HERO Section -->
+  <section class="hero">
+    <h2 class="visually-hidden">Scenic Views of Temples</h2>
+    <picture>
+      <source srcset="images/hero-small.webp" media="(max-width: 600px)">
+      <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
+      <img src="images/hero-large.webp" alt="A beautiful temple exterior">
+    </picture>
+  </section>
+
+  <!-- Temple cards container -->
+  <section id="temples-container" class="temples-grid">
+    <!-- Temple cards will be dynamically generated via JS -->
+  </section>
+</main>
+
+<footer>
+  <p>&copy; <span id="year"></span> Lillian Kennedy</p>
+  <p>Last Modified: <span id="lastModified"></span></p>
+</footer>
+
+<script>
+  // Set footer year and last modified
+  document.getElementById('year').textContent = new Date().getFullYear();
+  document.getElementById('lastModified').textContent = document.lastModified;
+</script>
+
 </body>
 </html>
