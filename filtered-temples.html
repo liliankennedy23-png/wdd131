@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Picture Album</title>
+    <link rel="stylesheet" href="filtered-temples.css">
+</head>
+<body>
+    <header>
+        <h1>Temple Picture Album</h1>
+        <nav>
+            <ul>
+                <li><button data-filter="all">Home</button></li>
+                <li><button data-filter="old">Old</button></li>
+                <li><button data-filter="new">New</button></li>
+                <li><button data-filter="large">Large</button></li>
+                <li><button data-filter="small">Small</button></li>
+            </ul>
+        </nav>
+        <div class="controls">
+            <input type="text" id="searchBar" placeholder="Search temple name...">
+            <select id="sortSelect">
+                <option value="none">Sort By</option>
+                <option value="year-asc">Year ↑</option>
+                <option value="year-desc">Year ↓</option>
+                <option value="area-asc">Area ↑</option>
+                <option value="area-desc">Area ↓</option>
+            </select>
+        </div>
+    </header>
+
+    <main>
+        <section id="temples-container" class="temples-grid">
+            <!-- Temple cards will be dynamically injected here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Temple Album | Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="filtered-temples.js"></script>
+</body>
+</html>
