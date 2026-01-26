@@ -6,7 +6,7 @@
     gap: 1.5rem;
   }
 
-  /* Weather pseudo-element icon */
+  /* Desktop weather emoji */
   .weather h2::after {
     content: " ⛅";
     font-size: 1.5rem;
@@ -16,3 +16,4 @@
     display: none;
   }
 }
+
