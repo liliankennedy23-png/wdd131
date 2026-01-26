@@ -12,20 +12,6 @@
   <link rel="stylesheet" href="styles/place-large.css">
 
   <script src="scripts/place.js" defer></script>
-
-  <style>
-    /* Visually hidden class for accessibility */
-    .visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      padding: 0;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0,0,0,0);
-      border: 0;
-    }
-  </style>
 </head>
 
 <body>
@@ -36,7 +22,6 @@
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Visually hidden heading for accessibility -->
   <h2 class="visually-hidden">Scenic Views of Alaska</h2>
   <picture>
     <source srcset="images/hero-small.webp" media="(max-width: 600px)">
@@ -51,21 +36,24 @@
   <section class="info">
     <h2>About Alaska</h2>
     <p>
-      Alaska is the largest U.S. state and is renowned for its vast wilderness, dramatic mountain ranges, massive glaciers, and abundant wildlife. 
-      From towering peaks like Denali to expansive forests and icy coastlines, Alaska offers some of the most breathtaking natural landscapes in the world. 
-      The state is home to diverse ecosystems, including tundra, boreal forests, and marine environments, supporting animals such as moose, bears, whales, and bald eagles. 
-      Known for its long summer days and stunning northern lights in winter, Alaska provides unforgettable experiences for visitors and residents alike.
+      Alaska is the largest U.S. state and is renowned for its vast wilderness, dramatic mountain ranges, massive glaciers, and abundant wildlife.
+      From towering peaks like Denali to expansive forests and icy coastlines, Alaska offers some of the most breathtaking natural landscapes in the world.
+      The state is home to diverse ecosystems, including tundra, boreal forests, and marine environments, supporting animals such as moose, bears,
+      whales, and bald eagles. Known for its long summer days and stunning northern lights in winter, Alaska provides unforgettable experiences
+      for visitors and residents alike.
     </p>
   </section>
 
   <!-- WEATHER -->
   <section class="weather">
     <h2>Weather</h2>
+
     <!-- Mobile SVG icon -->
     <img class="weather-icon" src="images/weather.svg" alt="Partly cloudy weather">
+
     <ul>
-      <li>Temperature: <span id="temp">30</span>°F</li>
-      <li>Wind Speed: <span id="wind">10</span> mph</li>
+      <li>Temperature: <span id="temp"></span>°F</li>
+      <li>Wind Speed: <span id="wind"></span> mph</li>
       <li>Wind Chill: <span id="windchill"></span></li>
     </ul>
   </section>
@@ -76,28 +64,6 @@
   <p>&copy; <span id="year"></span> Lillian Kennedy</p>
   <p>Last Modified: <span id="lastModified"></span></p>
 </footer>
-
-<script>
-  // Set current year
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  // Set last modified
-  document.getElementById('lastModified').textContent = document.lastModified;
-
-  // Calculate wind chill if temp and wind are present
-  const temp = parseFloat(document.getElementById('temp').textContent);
-  const wind = parseFloat(document.getElementById('wind').textContent);
-
-  function calculateWindChill(t, v) {
-    if (t <= 50 && v > 3) {
-      return Math.round(35.74 + 0.6215*t - 35.75*Math.pow(v,0.16) + 0.4275*t*Math.pow(v,0.16)) + "°F";
-    } else {
-      return "N/A";
-    }
-  }
-
-  document.getElementById('windchill').textContent = calculateWindChill(temp, wind);
-</script>
 
 </body>
 </html>
