@@ -4,7 +4,7 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 // Static weather values
 const temperature = 30; // °F
-const windSpeed = 10; // mph
+const windSpeed = 10;   // mph
 
 document.getElementById("temp").textContent = temperature;
 document.getElementById("wind").textContent = windSpeed;
