@@ -113,5 +113,3 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 /* INITIAL LOAD */
 displayTemples(temples);
-
-
