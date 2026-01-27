@@ -4,28 +4,28 @@ const temples = [
     location: "Salt Lake City, Utah",
     dedicated: 1893,
     area: 253015,
-    image: "images/salt-lake.webp"
+    image: "images/Salt-Lake-Temple.webp"
   },
   {
     name: "Paris France Temple",
     location: "Paris, France",
     dedicated: 2017,
     area: 44175,
-    image: "images/paris.webp"
+    image: "images/Paris-France-Temple.webp"
   },
   {
     name: "Seattle Washington Temple",
     location: "Seattle, Washington",
     dedicated: 1980,
     area: 110000,
-    image: "images/seattle.webp"
+    image: "images/Seattle-Washington-Temple.webp"
   },
   {
     name: "Rome Italy Temple",
     location: "Rome, Italy",
     dedicated: 2019,
     area: 40000,
-    image: "images/rome.webp"
+    image: "images/Rome-Italy-Temple.webp"
   },
   {
     name: "Laie Hawaii Temple",
@@ -113,4 +113,5 @@ document.getElementById("lastModified").textContent = document.lastModified;
 
 /* INITIAL LOAD */
 displayTemples(temples);
+
 
