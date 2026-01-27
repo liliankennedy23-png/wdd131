@@ -1,64 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Temple Picture Album</title>
 
-  <!-- Meta tags -->
+  <title>Temple Album</title>
+
   <meta name="description" content="A dynamic picture album of temples including name, location, dedication date, area, and images.">
   <meta name="author" content="Lillian Kennedy">
 
-  <!-- Stylesheets -->
   <link rel="stylesheet" href="styles/filtered-temples.css">
-
-  <!-- JavaScript -->
   <script src="scripts/filtered-temples.js" defer></script>
 </head>
 
 <body>
 
-<header>
-  <nav>
-    <ul>
-      <li><a href="#" data-filter="all">Home</a></li>
-      <li><a href="#" data-filter="old">Old</a></li>
-      <li><a href="#" data-filter="new">New</a></li>
-      <li><a href="#" data-filter="large">Large</a></li>
-      <li><a href="#" data-filter="small">Small</a></li>
-    </ul>
-  </nav>
-</header>
+  <!-- REQUIRED HEADER -->
+  <header>
+    <h2>Temple Album</h2>
+    <nav>
+      <ul>
+        <li><a href="#" data-filter="all">Home</a></li>
+        <li><a href="#" data-filter="old">Old</a></li>
+        <li><a href="#" data-filter="new">New</a></li>
+        <li><a href="#" data-filter="large">Large</a></li>
+        <li><a href="#" data-filter="small">Small</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<main>
-  <h1>Temple Album</h1>
+  <main>
+    <!-- REQUIRED H1 -->
+    <h1>Temple Album</h1>
 
-  <!-- HERO Section -->
-  <section class="hero">
-    <h2 class="visually-hidden">Scenic Views of Temples</h2>
-    <picture>
-      <source srcset="images/hero-small.webp" media="(max-width: 600px)">
-      <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
-      <img src="images/hero-large.webp" alt="A beautiful temple exterior">
-    </picture>
-  </section>
+    <!-- HERO SECTION (NOW HAS A HEADING) -->
+    <section class="hero">
+      <h2 class="visually-hidden">Featured Temple</h2>
+      <picture>
+        <source srcset="images/hero-small.webp" media="(max-width: 600px)">
+        <source srcset="images/hero-medium.webp" media="(max-width: 1000px)">
+        <img src="images/hero-large.webp" alt="A beautiful temple exterior">
+      </picture>
+    </section>
 
-  <!-- Temple cards container -->
-  <section id="temples-container" class="temples-grid">
-    <!-- Temple cards will be dynamically generated via JS -->
-  </section>
-</main>
+    <!-- TEMPLE CARDS -->
+    <section id="temple-cards"></section>
+  </main>
 
-<footer>
-  <p>&copy; <span id="year"></span> Lillian Kennedy</p>
-  <p>Last Modified: <span id="lastModified"></span></p>
-</footer>
-
-<script>
-  // Set footer year and last modified
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('lastModified').textContent = document.lastModified;
-</script>
+  <footer>
+    <p>© <span id="year"></span> | Lillian Kennedy</p>
+    <p>Last Modified: <span id="lastModified"></span></p>
+  </footer>
 
 </body>
 </html>
