@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>W05 – Product Review Form</title>
+  <meta name="description" content="Form to submit product reviews for the course Week 5 assignment.">
+  <meta name="author" content="Lillian Naftal">
+  <link rel="stylesheet" href="styles/form-style.css">
+  <script src="scripts/form.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1>Product Review Form</h1>
+</header>
+
+<main>
+  <form method="get" action="review.html">
+
+    <!-- GitHub Username -->
+    <label for="username">Enter your GitHub Username:</label>
+    <input type="text" id="liliankennedy23-png" name="liliankennedy23-png" required>
+
+    <!-- Product Selection (select) -->
+    <label for="product">Select Product:</label>
+    <select id="product" name="product" required>
+      <option value="" disabled selected>-- Choose a product --</option>
+      <option value="laptop">Laptop</option>
+      <option value="tablet">Tablet</option>
+      <option value="headphones">Headphones</option>
+      <option value="camera">Camera</option>
+    </select>
+
+    <!-- Rating (radio buttons) -->
+    <fieldset>
+      <legend>Rate the Product (1-5)</legend>
+      <label><input type="radio" name="rating" value="1" required> 1</label>
+      <label><input type="radio" name="rating" value="2"> 2</label>
+      <label><input type="radio" name="rating" value="3"> 3</label>
+      <label><input type="radio" name="rating" value="4"> 4</label>
+      <label><input type="radio" name="rating" value="5"> 5</label>
+    </fieldset>
+
+    <!-- Review Date -->
+    <label for="review-date">Date of Review:</label>
+    <input type="date" id="review-date" name="review-date" required>
+
+    <!-- Features (checkboxes) -->
+    <fieldset>
+      <legend>Features you liked:</legend>
+      <label><input type="checkbox" name="features" value="design"> Design</label>
+      <label><input type="checkbox" name="features" value="performance"> Performance</label>
+      <label><input type="checkbox" name="features" value="battery"> Battery Life</label>
+      <label><input type="checkbox" name="features" value="price"> Price</label>
+    </fieldset>
+
+    <!-- Additional Comments -->
+    <label for="comments">Additional Comments:</label>
+    <textarea id="comments" name="comments" rows="5" placeholder="Write your review here..."></textarea>
+
+    <!-- Submit Button -->
+    <button type="submit">Submit Review</button>
+
+  </form>
+</main>
+
+<footer>
+  <p>&copy; 2026 WDD131 – Product Review Form</p>
+</footer>
+
+</body>
+</html>
