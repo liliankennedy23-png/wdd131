@@ -1,73 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>W05 – Product Review Form</title>
-  <meta name="description" content="Form to submit product reviews for the course Week 5 assignment.">
+  <meta name="description" content="Form to submit product reviews for the Week 5 assignment.">
   <meta name="author" content="Lillian Naftal">
-  <link rel="stylesheet" href="styles/form-style.css">
+  <title>W05 – Product Review Form</title>
+
+  <link rel="stylesheet" href="styles/form-styles.css">
   <script src="scripts/form.js" defer></script>
 </head>
+
 <body>
+  <header>
+    <h1>Product Review Form</h1>
+  </header>
 
-<header>
-  <h1>Product Review Form</h1>
-</header>
+  <main>
+    <form method="get" action="review.html">
 
-<main>
-  <form method="get" action="review.html">
+      <!-- GitHub Username -->
+      <label for="username">GitHub Username</label>
+      <input type="text" id="liliankennedy23-png" name="liliankennedy23-png" required>
 
-    <!-- GitHub Username -->
-    <label for="username">Enter your GitHub Username:</label>
-    <input type="text" id="liliankennedy23-png" name="liliankennedy23-png" required>
+      <!-- Product Select -->
+      <label for="product">Product</label>
+      <select id="product" name="product" required>
+        <option value="" disabled selected>Select a Product ...</option>
+        <option value="laptop">Laptop</option>
+        <option value="tablet">Tablet</option>
+        <option value="headphones">Headphones</option>
+        <option value="camera">Camera</option>
+      </select>
 
-    <!-- Product Selection (select) -->
-    <label for="product">Select Product:</label>
-    <select id="product" name="product" required>
-      <option value="" disabled selected>-- Choose a product --</option>
-      <option value="laptop">Laptop</option>
-      <option value="tablet">Tablet</option>
-      <option value="headphones">Headphones</option>
-      <option value="camera">Camera</option>
-    </select>
+      <!-- Rating -->
+      <fieldset>
+        <legend>Overall Rating</legend>
 
-    <!-- Rating (radio buttons) -->
-    <fieldset>
-      <legend>Rate the Product (1-5)</legend>
-      <label><input type="radio" name="rating" value="1" required> 1</label>
-      <label><input type="radio" name="rating" value="2"> 2</label>
-      <label><input type="radio" name="rating" value="3"> 3</label>
-      <label><input type="radio" name="rating" value="4"> 4</label>
-      <label><input type="radio" name="rating" value="5"> 5</label>
-    </fieldset>
+        <label for="rating1">
+          <input type="radio" id="rating1" name="rating" value="1" required>
+          1
+        </label>
 
-    <!-- Review Date -->
-    <label for="review-date">Date of Review:</label>
-    <input type="date" id="review-date" name="review-date" required>
+        <label for="rating2">
+          <input type="radio" id="rating2" name="rating" value="2">
+          2
+        </label>
 
-    <!-- Features (checkboxes) -->
-    <fieldset>
-      <legend>Features you liked:</legend>
-      <label><input type="checkbox" name="features" value="design"> Design</label>
-      <label><input type="checkbox" name="features" value="performance"> Performance</label>
-      <label><input type="checkbox" name="features" value="battery"> Battery Life</label>
-      <label><input type="checkbox" name="features" value="price"> Price</label>
-    </fieldset>
+        <label for="rating3">
+          <input type="radio" id="rating3" name="rating" value="3">
+          3
+        </label>
 
-    <!-- Additional Comments -->
-    <label for="comments">Additional Comments:</label>
-    <textarea id="comments" name="comments" rows="5" placeholder="Write your review here..."></textarea>
+        <label for="rating4">
+          <input type="radio" id="rating4" name="rating" value="4">
+          4
+        </label>
 
-    <!-- Submit Button -->
-    <button type="submit">Submit Review</button>
+        <label for="rating5">
+          <input type="radio" id="rating5" name="rating" value="5">
+          5
+        </label>
+      </fieldset>
 
-  </form>
-</main>
+      <!-- Review Date -->
+      <label for="review-date">Date of Review</label>
+      <input type="date" id="review-date" name="review-date" required>
 
-<footer>
-  <p>&copy; 2026 WDD131 – Product Review Form</p>
-</footer>
+      <!-- Features -->
+      <fieldset>
+        <legend>Features You Liked</legend>
 
+        <input type="checkbox" id="feature-design" name="features" value="design">
+        <label for="feature-design">Design</label>
+
+        <input type="checkbox" id="feature-performance" name="features" value="performance">
+        <label for="feature-performance">Performance</label>
+
+        <input type="checkbox" id="feature-battery" name="features" value="battery">
+        <label for="feature-battery">Battery Life</label>
+
+        <input type="checkbox" id="feature-price" name="features" value="price">
+        <label for="feature-price">Price</label>
+      </fieldset>
+
+      <!-- Written Review -->
+      <label for="review">Written Review</label>
+      <textarea id="review" name="review" rows="4" required></textarea>
+
+      <!-- Submit -->
+      <button type="submit">Submit Review</button>
+
+    </form>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Lillian Naftal</p>
+  </footer>
 </body>
 </html>
