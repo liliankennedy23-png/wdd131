@@ -61,15 +61,23 @@ const temples = [
     dedicated: 1999,
     area: 10700,
     image: "images/South-Carolina-Temple.webp"
+  },
+  {
+    name: "Provo City Center Temple",
+    location: "Provo, Utah",
+    dedicated: 2016,
+    area: 85000,
+    image: "images/Provo-City-Center-Temple.webp"
   }
 ];
 
 const container = document.querySelector("#temple-cards");
+const navLinks = document.querySelectorAll("nav a");
 
-function displayTemples(filteredTemples) {
+function displayTemples(list) {
   container.innerHTML = "";
 
-  filteredTemples.forEach(temple => {
+  list.forEach(temple => {
     const card = document.createElement("section");
     card.classList.add("temple-card");
 
@@ -78,39 +86,38 @@ function displayTemples(filteredTemples) {
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img 
-        src="${temple.image}" 
-        alt="${temple.name}" 
-        loading="lazy">
+      <img src="${temple.image}" alt="${temple.name}" loading="lazy">
     `;
 
     container.appendChild(card);
   });
 }
 
-/* FILTERING */
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", event => {
-    event.preventDefault();
-    const filter = link.dataset.filter;
+navLinks.forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
 
-    let filtered = temples;
+    navLinks.forEach(a => a.classList.remove("active"));
+    link.classList.add("active");
+
+    const filter = link.dataset.filter;
+    let result = temples;
 
     if (filter === "old") {
-      filtered = temples.filter(t => t.dedicated < 1900);
+      result = temples.filter(t => t.dedicated < 1900);
     } else if (filter === "new") {
-      filtered = temples.filter(t => t.dedicated > 2000);
+      result = temples.filter(t => t.dedicated > 2000);
     } else if (filter === "large") {
-      filtered = temples.filter(t => t.area > 90000);
+      result = temples.filter(t => t.area > 90000);
     } else if (filter === "small") {
-      filtered = temples.filter(t => t.area < 10000); // ✅ FIXED
+      result = temples.filter(t => t.area < 10000);
     }
 
-    displayTemples(filtered);
+    displayTemples(result);
   });
 });
 
-/* FOOTER DATES */
+/* FOOTER */
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
