@@ -78,7 +78,10 @@ function displayTemples(filteredTemples) {
       <p><strong>Location:</strong> ${temple.location}</p>
       <p><strong>Dedicated:</strong> ${temple.dedicated}</p>
       <p><strong>Area:</strong> ${temple.area.toLocaleString()} sq ft</p>
-      <img src="${temple.image}" alt="${temple.name}">
+      <img 
+        src="${temple.image}" 
+        alt="${temple.name}" 
+        loading="lazy">
     `;
 
     container.appendChild(card);
@@ -100,7 +103,7 @@ document.querySelectorAll("nav a").forEach(link => {
     } else if (filter === "large") {
       filtered = temples.filter(t => t.area > 90000);
     } else if (filter === "small") {
-      filtered = temples.filter(t => t.area < 50000);
+      filtered = temples.filter(t => t.area < 10000); // ✅ FIXED
     }
 
     displayTemples(filtered);
