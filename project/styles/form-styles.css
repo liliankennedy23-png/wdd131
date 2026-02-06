@@ -57,3 +57,8 @@ button:hover {
   background-color: #1b4965;
   color: #fff;
 }
+@media (min-width: 768px) {
+  main {
+    max-width: 700px;
+  }
+}
