@@ -3,9 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore Alaska’s top destinations and adventures.">
-  <meta name="author" content="Lillian Naftal">
-  <title>Alaska Travel & Adventure Guide</title>
+  <title>Traveler Reviews</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
@@ -15,14 +13,13 @@
 <body>
 
 <header>
-  <h1>Alaska Travel & Adventure Guide</h1>
+  <h1>Share Your Experience</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="destinations.html">Destinations</a></li>
       <li><a href="activities.html">Activities</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="references.html">References</a></li>
+      <li><a href="review.html">Reviews</a></li>
     </ul>
   </nav>
 </header>
@@ -30,13 +27,21 @@
 <main>
 
 <section class="card">
-  <img src="images/alaska-hero.jpg" alt="Alaska mountain landscape" loading="lazy">
-  <h2>Welcome to Alaska</h2>
-  <p>
-    Discover breathtaking glaciers, wildlife encounters, and unforgettable adventures.
-    Whether exploring Denali, viewing the Northern Lights, or kayaking along the coast,
-    Alaska offers experiences unlike anywhere else in the world.
-  </p>
+  <h2>Submit a Review</h2>
+  <form id="review-form">
+    <label for="name">Name</label>
+    <input type="text" id="name" required>
+
+    <label for="experience">Experience</label>
+    <textarea id="experience" required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<section class="card">
+  <h2>Traveler Reviews</h2>
+  <div id="reviews"></div>
 </section>
 
 </main>
