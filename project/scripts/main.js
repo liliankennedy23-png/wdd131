@@ -1,71 +1,58 @@
-// Sample data for destinations
-const destinations = [
-  { name: "Denali National Park", type: "National Park", season: "summer" },
-  { name: "Anchorage", type: "City", season: "all" },
-  { name: "Juneau", type: "Capital", season: "all" }
-];
-
-// Sample data for activities
 const activities = [
-  { name: "Hiking", category: "hiking" },
-  { name: "Wildlife Viewing", category: "wildlife" },
-  { name: "Glacier Tours", category: "glaciers" }
+  { name: "Glacier Hiking", difficulty: "Moderate" },
+  { name: "Dog Sledding", difficulty: "Easy" },
+  { name: "Kayaking", difficulty: "Moderate" }
 ];
 
-// Populate featured destinations on homepage
-const featuredContainer = document.getElementById("featured-destinations");
-if (featuredContainer) {
-  destinations.forEach(dest => {
-    featuredContainer.innerHTML += `<div class="destination-card">
-      <h3>${dest.name}</h3>
-      <p>Type: ${dest.type}</p>
-      <p>Best Season: ${dest.season}</p>
-    </div>`;
-  });
+function renderActivities() {
+  const list = document.getElementById("activity-list");
+  if (!list) return;
+
+  list.innerHTML = activities
+    .map(activity => `<li>${activity.name} - ${activity.difficulty}</li>`)
+    .join("");
 }
 
-// Populate destinations page
-const destinationsList = document.getElementById("destinations-list");
-if (destinationsList) {
-  destinations.forEach(dest => {
-    destinationsList.innerHTML += `<div class="destination-card">
-      <h3>${dest.name}</h3>
-      <p>Type: ${dest.type}</p>
-      <p>Best Season: ${dest.season}</p>
-    </div>`;
-  });
+function saveReview(name, experience) {
+  const review = { name, experience };
+  const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+  reviews.push(review);
+  localStorage.setItem("reviews", JSON.stringify(reviews));
 }
 
-// Populate activities page and filter
-const activitiesList = document.getElementById("activities-list");
-const activityFilter = document.getElementById("activity-filter");
+function renderReviews() {
+  const container = document.getElementById("reviews");
+  if (!container) return;
 
-function renderActivities(filter) {
-  if (!activitiesList) return;
-  activitiesList.innerHTML = "";
-  const filtered = filter === "all" ? activities : activities.filter(act => act.category === filter);
-  filtered.forEach(act => {
-    activitiesList.innerHTML += `<div class="activity-card">
-      <h3>${act.name}</h3>
-      <p>Category: ${act.category}</p>
-    </div>`;
-  });
+  const reviews = JSON.parse(localStorage.getItem("reviews")) || [];
+
+  container.innerHTML = reviews
+    .map(r => `<p><strong>${r.name}</strong>: ${r.experience}</p>`)
+    .join("");
 }
 
-if (activitiesList) {
-  renderActivities("all");
-}
+function handleForm(event) {
+  event.preventDefault();
 
-if (activityFilter) {
-  activityFilter.addEventListener("change", (e) => {
-    renderActivities(e.target.value);
-    localStorage.setItem("lastFilter", e.target.value);
-  });
+  const name = document.getElementById("name").value.trim();
+  const experience = document.getElementById("experience").value.trim();
 
-  // Load last filter from localStorage
-  const lastFilter = localStorage.getItem("lastFilter");
-  if (lastFilter) {
-    activityFilter.value = lastFilter;
-    renderActivities(lastFilter);
+  if (!name || !experience) {
+    alert("Please complete all fields.");
+    return;
   }
+
+  saveReview(name, experience);
+  renderReviews();
+  event.target.reset();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+  renderActivities();
+  renderReviews();
+
+  const form = document.getElementById("review-form");
+  if (form) {
+    form.addEventListener("submit", handleForm);
+  }
+});

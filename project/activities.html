@@ -1,43 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Activities | Alaska Travel & Adventure Guide</title>
+  <title>Activities | Alaska Travel</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js" defer></script>
+  <script defer src="scripts/main.js"></script>
 </head>
+
 <body>
 
 <header>
-  <h1>Alaska Travel & Adventure Guide</h1>
+  <h1>Adventure Activities</h1>
   <nav>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="destinations.html">Destinations</a></li>
       <li><a href="activities.html">Activities</a></li>
-      <li><a href="references.html">References</a></li>
+      <li><a href="review.html">Reviews</a></li>
     </ul>
   </nav>
 </header>
 
 <main>
-  <h2>Adventure Activities</h2>
-  <label for="activity-filter">Filter Activities:</label>
-  <select id="activity-filter">
-    <option value="all">All</option>
-    <option value="hiking">Hiking</option>
-    <option value="wildlife">Wildlife</option>
-    <option value="glaciers">Glaciers</option>
-  </select>
-
-  <div id="activities-list">
-    <!-- JS will populate activity cards -->
-  </div>
+  <section class="card">
+    <h2>Popular Activities</h2>
+    <ul id="activity-list"></ul>
+  </section>
 </main>
 
 <footer>
-  <p>&copy; 2026 Alaska Travel & Adventure Guide | <a href="references.html">References</a></p>
+  <p>&copy; 2026 Lillian Naftal</p>
+  <a href="references.html">References</a>
 </footer>
 
 </body>
